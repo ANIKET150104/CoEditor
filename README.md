@@ -26,16 +26,14 @@ CoEditor is a **Spring Boot–based collaborative code editor** with:
 ---
 
 ## 📂 Project Structure
-
+```
 CoEditor/
 ├─ src/main/java/... # Controllers, services, config
 ├─ src/main/resources/...# templates, static assets, config
 ├─ jte-classes/ # Generated JTE classes
 ├─ pom.xml # Maven build config
 └─ Dockerfile # Container build
-
-yaml
-Copy code
+```
 
 ---
 
@@ -68,14 +66,17 @@ App runs at: http://localhost:8080
 | GET     |	`/register`     |	Render login page    |
 
 
-### 🔑 Authentication (JWT REST API)
-**Base Path:** `/auth`
+### 🔑 Authentication (Base Path: `/auth`)
+|  Method  |   Path      |     Body                                 |	Response                   |
 
-| Method | 	 Path    |	           Body                         |	Response           |
-|---- ---|-----------|------------------------------------------|--------------------|
-| POST	 |`/register`| { "username": "...", "password": "..." } |	{ "token": "..." } |
-|---- ---|-----------|------------------------------------------|--------------------|
-| POST	 | `/login`  | { "username": "...", "password": "..." } |	{ "token": "..." } |
+|----------|-------------|------------------------------------------|----------------------------|
+
+| POST	   | `/register` | { "username": "...", "password": "..." } | 	{ "token": "..." }       |
+
+|----------|-------------|------------------------------------------|----------------------------|
+
+| POST	   | `/login`    | { "username": "...", "password": "..." } |	{ "token": "..." }         |
+
 
 **Use token for protected requests:**
 
